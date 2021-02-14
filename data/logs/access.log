@@ -1,0 +1,7 @@
+- 127.0.0.1 - - [14/Feb/2021:20:03:55 +0000] "GET /packages/release?ver=1.6.17&os=Linux_4.19.128-microsoft-standard_x86_64&env=webadmin_pre_cloud-docker HTTP/1.0" 404 1236
+- 127.0.0.1 - - [14/Feb/2021:20:03:55 +0000] "GET /packages/relbr1.6? HTTP/1.0" 404 1236
+- 127.0.0.1 - - [14/Feb/2021:20:03:55 +0000] "GET /packages/release?ver=1.6.17&os=Linux_4.19.128-microsoft-standard_x86_64&env=webadmin_pre_cloud-docker HTTP/1.0" 404 1236
+- 127.0.0.1 - - [14/Feb/2021:20:03:55 +0000] "GET /packages/relbr1.6? HTTP/1.0" 404 1236
+- 192.168.0.1 - - [14/Feb/2021:20:05:50 +0000] "GET / HTTP/2" 404 705
+- 192.168.0.1 - - [14/Feb/2021:20:05:50 +0000] "GET /favicon.ico HTTP/2" 404 705
+- 192.168.0.1 - - [14/Feb/2021:20:05:52 +0000] "GET /favicon.ico HTTP/2" 404 705

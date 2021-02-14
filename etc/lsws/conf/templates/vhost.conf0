@@ -1,0 +1,166 @@
+vhRoot                    /var/www/vhosts/$VH_NAME/
+configFile                /var/www/vhosts/$VH_NAME/vhconf.conf
+allowSymbolLink           0
+enableScript              1
+restrained                1
+setUIDMode                2
+
+virtualHostConfig  {
+  docRoot                 $VH_ROOT/html/
+  enableGzip              1
+
+  errorlog  {
+    useServer             1
+  }
+
+  accesslog /var/www/vhosts/$VH_NAME/logs/access.log {
+    useServer             0
+    rollingSize           100M
+    keepDays              7
+    compressArchive       1
+  }
+
+  index  {
+    useServer             0
+    indexFiles            index.php, index.html, index.htm
+    autoIndex             0
+    autoIndexURI          /_autoindex/default.php
+  }
+
+  errorpage 404 {
+    url                   /404/
+  }
+
+  expires  {
+    enableExpires         1
+  }
+
+  accessControl  {
+    allow                 *
+  }
+
+  context / {
+    location              $DOC_ROOT/
+    allowBrowse           1
+    extraHeaders          <<<END_extraHeaders
+set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS, HEAD"
+set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.addthis.com https://*.aspnetcdn.com https://*.bootstrapcdn.com https://*.cdnjs.com https://*.cloudflare.com https://*.facebook.net https://*.fontawesome.com https://*.google-analytics.com https://*.google.com https://*.googleapis.com https://*.googlecode.com https://*.googlesyndication.com https://*.googletagmanager.com https://*.googletagservices.com https://*.gstatic.com https://*.jquery.com https://*.jsdelivr.net https://*.maxcdn.com https://*.onesignal.com https://*.optimizely.com https://*.optmnstr.com https://*.quic.cloud https://*.sharethis.com https://*.shopify.com https://*.twitter.com https://*.w.org https://*.wp.com; style-src 'self' 'unsafe-inline' https://*.addthis.com https://*.aspnetcdn.com https://*.bootstrapcdn.com https://*.cdnjs.com https://*.cloudflare.com https://*.facebook.net https://*.fontawesome.com https://*.google-analytics.com https://*.google.com https://*.googleapis.com https://*.googlecode.com https://*.googlesyndication.com https://*.googletagmanager.com https://*.googletagservices.com https://*.gstatic.com https://*.jquery.com https://*.jsdelivr.net https://*.maxcdn.com https://*.onesignal.com https://*.optimizely.com https://*.optmnstr.com https://*.quic.cloud https://*.sharethis.com https://*.shopify.com https://*.twitter.com https://*.w.org https://*.wp.com; font-src 'self' data: https://*.addthis.com https://*.aspnetcdn.com https://*.bootstrapcdn.com https://*.cdnjs.com https://*.cloudflare.com https://*.facebook.net https://*.fontawesome.com https://*.google-analytics.com https://*.google.com https://*.googleapis.com https://*.googlecode.com https://*.googlesyndication.com https://*.googletagmanager.com https://*.googletagservices.com https://*.gstatic.com https://*.jquery.com https://*.jsdelivr.net https://*.maxcdn.com https://*.onesignal.com https://*.optimizely.com https://*.optmnstr.com https://*.quic.cloud https://*.sharethis.com https://*.shopify.com https://*.twitter.com https://*.w.org https://*.wp.com; img-src 'self' data: https://*.imgur.com https://*.addthis.com https://*.aspnetcdn.com https://*.bootstrapcdn.com https://*.cdnjs.com https://*.cloudflare.com https://*.facebook.net https://*.fontawesome.com https://*.google-analytics.com https://*.google.com https://*.googleapis.com https://*.googlecode.com https://*.googlesyndication.com https://*.googletagmanager.com https://*.googletagservices.com https://*.gstatic.com https://*.jquery.com https://*.jsdelivr.net https://*.maxcdn.com https://*.onesignal.com https://*.optimizely.com https://*.optmnstr.com https://*.quic.cloud https://*.sharethis.com https://*.shopify.com https://*.twitter.com https://*.w.org https://*.wp.com; frame-src 'self'; manifest-src 'self'; media-src 'self'; base-uri 'self'; connect-src 'self'; object-src 'none'; worker-src 'none'; block-all-mixed-content; upgrade-insecure-requests"
+set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+set X-Content-Type-Options "nosniff"
+set X-DNS-Prefetch-Control "on"
+set X-Frame-Options "SAMEORIGIN"
+set X-XSS-Protection "1; mode=block"
+set X-Powered-By "eXtremeSHOK.com"
+    END_extraHeaders
+
+    indexFiles            index.php, index.html, index.htm
+    autoIndex             0
+
+    rewrite  {
+      enable              1
+RewriteFile .htaccess
+RewriteFile $DOC_ROOT/.htaccess
+    }
+    addDefaultCharset     off
+
+    phpIniOverride  {
+
+    }
+  }
+
+  context /wp-content/cache/js/ {
+    location              $DOC_ROOT/wp-content/cache/js/
+    allowBrowse           1
+    enableExpires         1
+    expiresByType         application/x-javascript=A15552000, text/javascript=A15552000, application/javascript=A15552000
+    extraHeaders          <<<END_extraHeaders
+unset Cache-control
+set Cache-control public, max-age=15552000
+set Access-Control-Allow-Origin: *
+    END_extraHeaders
+
+
+    rewrite  {
+
+    }
+    addDefaultCharset     off
+
+    phpIniOverride  {
+
+    }
+  }
+
+  context /wp-content/cache/css/ {
+    location              $DOC_ROOT/wp-content/cache/css/
+    allowBrowse           1
+    enableExpires         1
+    expiresByType         text/css=A15552000
+    extraHeaders          <<<END_extraHeaders
+unset Cache-control
+set Cache-control public, max-age=15552000
+set Access-Control-Allow-Origin: *
+    END_extraHeaders
+
+
+    rewrite  {
+
+    }
+    addDefaultCharset     off
+
+    phpIniOverride  {
+
+    }
+  }
+
+  context exp:^.*(gif|ico|jpeg|jpg|png|webp|woff|woff2|fon|fot|ttf)$ {
+    location              $DOC_ROOT/$0
+    allowBrowse           1
+    enableExpires         1
+    expiresByType         image/gif=A15552000, image/x-icon=A15552000, image/jpeg=A15552000, image/png=A15552000, image/webp=A15552000, font/ttf=A15552000, font/woff=A15552000, font/woff2=A15552000, application/x-font-ttf=A15552000, application/x-font-woff=A15552000, application/font-woff=A15552000, application/font-woff2=A15552000
+    extraHeaders          <<<END_extraHeaders
+unset Cache-control
+set Cache-control public, max-age=15552000
+set Access-Control-Allow-Origin: *
+    END_extraHeaders
+
+
+    rewrite  {
+
+    }
+    addDefaultCharset     off
+
+    phpIniOverride  {
+
+    }
+  }
+
+  rewrite  {
+    enable                1
+    autoLoadHtaccess      1
+    logLevel              0
+  }
+
+  vhssl  {
+    keyFile               /var/www/vhosts/$VH_NAME/certs/privkey.pem
+    certFile              /var/www/vhosts/$VH_NAME/certs/fullchain.pem
+    certChain             1
+    renegProtection       1
+    sslSessionCache       1
+    sslSessionTickets     1
+    enableSpdy            15
+    enableQuic            1
+    enableStapling        1
+    ocspRespMaxAge        86400
+  }
+
+  awstats {
+    workingDir $VH_ROOT/awstats
+    awstatsURI /awstats/
+    siteDomain localhost
+    siteAliases 127.0.0.1 localhost
+    updateMode 0
+    updateInterval 86400
+    updateOffset 0
+    securedConn 0
+  }
+}

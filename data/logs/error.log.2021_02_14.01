@@ -1,0 +1,199 @@
+2021-02-14 19:57:10.894675 [INFO] [PlainConf] [httpServerConfig:] start parsing file /usr/local/lsws/conf/httpd_config.conf
+2021-02-14 19:57:10.895016 [INFO] [PlainConf] [httpServerConfig:] Finished parsing file /usr/local/lsws/conf/httpd_config.conf
+2021-02-14 19:57:10.895208 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [modsecurity on]
+2021-02-14 19:57:10.895386 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [modsecurity_rules `]
+2021-02-14 19:57:10.895592 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secdefaultaction "deny,phase:2,status:403"]
+2021-02-14 19:57:10.896087 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secrule ARGS "\.\./" "t:normalizePathWin,id:50904,severity:4,t:none,t:urlDecodeUni,t:htmlEntityDecode,t:lowercase,msg:'Drive Access'"]
+2021-02-14 19:57:10.896315 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secdebugloglevel 0]
+2021-02-14 19:57:10.896542 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secdebuglog /usr/local/lsws/logs/modsec.log]
+2021-02-14 19:57:10.896764 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secauditengine off]
+2021-02-14 19:57:10.897010 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secauditlogrelevantstatus "^(?:5|4(?!04))"]
+2021-02-14 19:57:10.897295 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secauditlogparts AFH]
+2021-02-14 19:57:10.897490 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secauditlogtype Serial]
+2021-02-14 19:57:10.897718 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secauditlog /usr/local/lsws/logs/auditmodsec.log]
+2021-02-14 19:57:10.897941 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleengine on]
+2021-02-14 19:57:10.898153 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 210590]
+2021-02-14 19:57:10.898333 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 210710]
+2021-02-14 19:57:10.898581 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 211210]
+2021-02-14 19:57:10.898763 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 211820]
+2021-02-14 19:57:10.898961 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 218530]
+2021-02-14 19:57:10.899172 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221420]
+2021-02-14 19:57:10.899370 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221450]
+2021-02-14 19:57:10.899578 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221520]
+2021-02-14 19:57:10.899776 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221790]
+2021-02-14 19:57:10.899987 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221800]
+2021-02-14 19:57:10.900190 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221820]
+2021-02-14 19:57:10.900404 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221910]
+2021-02-14 19:57:10.900611 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221940]
+2021-02-14 19:57:10.900817 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 221990]
+2021-02-14 19:57:10.901026 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 222000]
+2021-02-14 19:57:10.901563 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 222020]
+2021-02-14 19:57:10.901849 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 226050]
+2021-02-14 19:57:10.902051 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 243420]
+2021-02-14 19:57:10.902300 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 920350]
+2021-02-14 19:57:10.902523 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 930120]
+2021-02-14 19:57:10.902771 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 932105]
+2021-02-14 19:57:10.903018 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 932115]
+2021-02-14 19:57:10.903272 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 932150]
+2021-02-14 19:57:10.903511 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 933120]
+2021-02-14 19:57:10.903725 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 941100]
+2021-02-14 19:57:10.903926 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 941130]
+2021-02-14 19:57:10.904124 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 941160]
+2021-02-14 19:57:10.904329 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 942100]
+2021-02-14 19:57:10.904546 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 942140]
+2021-02-14 19:57:10.904764 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [secruleremovebyid 942350]
+2021-02-14 19:57:10.904947 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [` ]
+2021-02-14 19:57:10.905127 [INFO] [PlainConf] [httpServerConfig:] module [mod_security] add param [modsecurity_rules_file /usr/local/lsws/conf/modsecurity/modsec_includes.conf]
+2021-02-14 19:57:10.905306 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [enablecache 0]
+2021-02-14 19:57:10.905576 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [enableprivatecache 0]
+2021-02-14 19:57:10.905789 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [checkpubliccache 1]
+2021-02-14 19:57:10.906008 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [checkprivatecache 1]
+2021-02-14 19:57:10.906207 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [qscache 1]
+2021-02-14 19:57:10.906447 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [reqcookiecache 1]
+2021-02-14 19:57:10.906618 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [ignorereqcachectrl 1]
+2021-02-14 19:57:10.906809 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [ignorerespcachectrl 0]
+2021-02-14 19:57:10.906989 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [respcookiecache 1]
+2021-02-14 19:57:10.907188 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [expireinseconds 604800]
+2021-02-14 19:57:10.907339 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [privateexpireinseconds 3600]
+2021-02-14 19:57:10.907542 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [maxstaleage 300]
+2021-02-14 19:57:10.907723 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [maxcacheobjsize 10000000]
+2021-02-14 19:57:10.907972 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [storagepath /usr/local/lsws/cachedata/]
+2021-02-14 19:57:10.908140 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [nocachedomain ]
+2021-02-14 19:57:10.908322 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [nocacheurl ]
+2021-02-14 19:57:10.908656 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [no-vary 0]
+2021-02-14 19:57:10.908900 [INFO] [PlainConf] [httpServerConfig:] module [cache] add param [addetag 0]
+2021-02-14 19:57:10.909115 [NOTICE] Loading LiteSpeed/1.6.17 Open
+	module versions:
+	modgzip 1.1
+	cache 1.62
+	modinspector 1.1
+	uploadprogress 1.1
+	mod_security 1.3
+ (built: Thu Oct 29 15:05:03 UTC 2020) ...
+2021-02-14 19:57:10.909312 [NOTICE] Using [BoringSSL]
+2021-02-14 19:57:10.910214 [NOTICE] [ADMIN] server socket: uds://usr/local/lsws/admin/tmp/admin.sock.7648
+2021-02-14 19:57:10.910583 [NOTICE] chroot is disabled.
+2021-02-14 19:57:10.910819 [INFO] old priority: 0, new priority: 0
+2021-02-14 19:57:10.911103 [INFO] [config:server:basics2] For better obscurity, server version number is hidden in the response header.
+2021-02-14 19:57:10.921882 [INFO] You allow cgroups, but your OS does not support it; disabled.  Try installing glib
+2021-02-14 19:57:10.922268 [NOTICE] [PID: 4619]: forked cgid: 4628
+2021-02-14 19:57:10.923005 [NOTICE] [config:server:basics2:server:recaptcha:vhost:LswsDefault] Config recaptcha.
+2021-02-14 19:57:10.923280 [NOTICE] [config:server:basics2:server:recaptcha:vhost:LswsDefault] Recaptcha configured and enabled.
+2021-02-14 19:57:10.924748 [INFO] [PlainConf] [adminConfig:] start parsing file /usr/local/lsws/admin/conf/admin_config.conf
+2021-02-14 19:57:10.931762 [INFO] [PlainConf] [adminConfig:] Finished parsing file /usr/local/lsws/admin/conf/admin_config.conf
+2021-02-14 19:57:10.934325 [INFO] [Module:Mod_Security] ParseConfig entry, level 1, Mod_Security v3.0.4
+2021-02-14 19:57:10.934699 [INFO] [Module:Mod_Security] Enable flag interpreted as 1
+2021-02-14 19:57:10.934948 [INFO] [Module:Mod_Security] setSecRule value: 
+secdefaultaction "deny,phase:2,status:403"
+secrule ARGS "\.\./" "t:normalizePathWin,id:50904,severity:4,t:none,t:urlDecodeUni,t:htmlEntityDecode,t:lowercase,msg:'Drive Access'"
+secdebugloglevel 0
+secdebuglog /usr/local/lsws/logs/modsec.log
+secauditengine off
+secauditlogrelevantstatus "^(?:5|4(?!04))"
+secauditlogparts AFH
+secauditlogtype Serial
+secauditlog /usr/local/lsws/logs/auditmodsec.log
+secruleengine on
+secruleremovebyid 210590
+secruleremovebyid 210710
+secruleremovebyid 211210
+secruleremovebyid 211820
+secruleremovebyid 218530
+secruleremovebyid 221420
+secruleremovebyid 221450
+secruleremovebyid 221520
+secruleremovebyid 221790
+secruleremovebyid 221800
+secruleremovebyid 221820
+secruleremovebyid 221910
+secruleremovebyid 221940
+secruleremovebyid 221990
+secruleremovebyid 222000
+secruleremovebyid 222020
+secruleremovebyid 226050
+secruleremovebyid 243420
+secruleremovebyid 920350
+secruleremovebyid 930120
+secruleremovebyid 932105
+secruleremovebyid 932115
+secruleremovebyid 932150
+secruleremovebyid 933120
+secruleremovebyid 941100
+secruleremovebyid 941130
+secruleremovebyid 941160
+secruleremovebyid 942100
+secruleremovebyid 942140
+secruleremovebyid 942350
+ , type: 1 
+2021-02-14 19:57:10.936191 [INFO] [Module:Mod_Security] setSecRule value: /usr/local/lsws/conf/modsecurity/modsec_includes.conf, type: 2 
+2021-02-14 19:57:11.406895 [INFO] [Module: modcompress 1.1] has been initialized successfully
+2021-02-14 19:57:11.407156 [INFO] [Module: moddecompress 1.1] has been initialized successfully
+2021-02-14 19:57:11.407445 [INFO] [Module: cache 1.62] has been initialized successfully
+2021-02-14 19:57:11.407683 [INFO] [Module: mod_security Mod_Security 1.3] has been initialized successfully
+2021-02-14 19:57:11.417644 [NOTICE] Created new Listener [adminListener].
+2021-02-14 19:57:11.417912 [INFO] [UDP:0.0.0.0:7080] initPacketsIn: allocated 100 packets
+2021-02-14 19:57:11.418231 [NOTICE] Created new Listener [HTTP].
+2021-02-14 19:57:11.430213 [ERROR] [SSL] OCSP Stapling can't be enabled [X509_STORE_CTX_get1_issuer failed!].
+2021-02-14 19:57:11.430612 [NOTICE] Created new Listener [HTTPS].
+2021-02-14 19:57:11.430930 [INFO] [UDP:0.0.0.0:443] initPacketsIn: allocated 100 packets
+2021-02-14 19:57:11.431303 [NOTICE] Created new Listener [Default].
+2021-02-14 19:57:11.431497 [NOTICE] The maximum number of file descriptor limit is set to 1048576.
+2021-02-14 19:57:11.435013 [NOTICE] [config:server:rails] 'Process Limit' probably is too low, adjust the limit to: 6100.
+2021-02-14 19:57:11.442144 [INFO] [PlainConf] [virtualHostTemplate:] start parsing file /usr/local/lsws/conf/templates/ccl.conf
+2021-02-14 19:57:11.451102 [INFO] [PlainConf] [virtualHostTemplate:] Finished parsing file /usr/local/lsws/conf/templates/ccl.conf
+2021-02-14 19:57:11.451358 [INFO] [PlainConf] [context:/] rewrite [] add rules [rewritefile .htaccess]
+2021-02-14 19:57:11.453361 [INFO] [PlainConf] [virtualHostTemplate:] start parsing file /usr/local/lsws/conf/templates/rails.conf
+2021-02-14 19:57:11.462085 [INFO] [PlainConf] [virtualHostTemplate:] Finished parsing file /usr/local/lsws/conf/templates/rails.conf
+2021-02-14 19:57:11.462413 [INFO] [PlainConf] [context:/] rewrite [] add rules [rewritefile .htaccess]
+2021-02-14 19:57:11.465668 [INFO] [PlainConf] [virtualHostTemplate:] start parsing file /usr/local/lsws/conf/templates/vhost.conf
+2021-02-14 19:57:11.477801 [INFO] [PlainConf] [virtualHostTemplate:] Finished parsing file /usr/local/lsws/conf/templates/vhost.conf
+2021-02-14 19:57:11.478174 [INFO] [PlainConf] [context:/] rewrite [] add rules [rewritefile .htaccess]
+2021-02-14 19:57:11.478435 [INFO] [PlainConf] [context:/] rewrite [] add rules [rewritefile $DOC_ROOT/.htaccess]
+2021-02-14 19:57:11.480290 [WARN] Path for document root is not accessible: /var/www/vhosts/localhost/html/
+2021-02-14 19:57:11.480550 [WARN] [config:template:localhost:vhost:localhost] configuration failed!
+2021-02-14 19:57:11.480789 [NOTICE] [ZConfManager] No VHosts added, do not send!
+2021-02-14 19:57:11.481077 [INFO] [UDP:0.0.0.0:443] initPacketsIn: allocated 100 packets
+2021-02-14 19:57:11.481333 [INFO] [UDP:0.0.0.0:7080] initPacketsIn: allocated 100 packets
+2021-02-14 19:57:11.481765 [NOTICE] Instance is ready for service.
+2021-02-14 19:57:11.482532 [NOTICE] [AutoRestarter] new child process with pid=4738 is forked!
+2021-02-14 19:57:11.483194 [NOTICE] AIO is not supported on this machine!
+2021-02-14 19:57:11.483274 [NOTICE] [AutoRestarter] new child process with pid=4739 is forked!
+2021-02-14 19:57:11.483567 [INFO] Stop listener *:7080.
+2021-02-14 19:57:11.483916 [NOTICE] [child: 4738] Successfully change current user to nobody
+2021-02-14 19:57:11.484688 [NOTICE] AIO is not supported on this machine!
+2021-02-14 19:57:11.484756 [NOTICE] Child: 4738] Core dump is disabled.
+2021-02-14 19:57:11.485094 [NOTICE] [child: 4739] Successfully change current user to nobody
+2021-02-14 19:57:11.485351 [INFO] [lsphp]: locked pid file [/tmp/lshttpd/lsphp.sock.pid].
+2021-02-14 19:57:11.485492 [NOTICE] Child: 4739] Core dump is disabled.
+2021-02-14 19:57:11.485769 [INFO] [lsphp] remove unix socket for detached process: /tmp/lshttpd/lsphp.sock
+2021-02-14 19:57:11.486069 [NOTICE] [Child: 4739] Setup swapping space...
+2021-02-14 19:57:11.486440 [NOTICE] [LocalWorker::workerExec] Config[lsphp]: suExec uid 65534 gid 65534 cmd /usr/local/lsws/fcgi-bin/lsphp, final uid 65534 gid 65534.
+2021-02-14 19:57:11.486722 [NOTICE] [Child: 4739] LiteSpeed/1.6.17 Open
+	module versions:
+	modgzip 1.1
+	cache 1.62
+	modinspector 1.1
+	uploadprogress 1.1
+	mod_security 1.3
+ starts successfully!
+2021-02-14 19:57:11.487343 [NOTICE] [lsphp] add child process pid: 4740
+2021-02-14 19:57:11.487622 [INFO] [lsphp]: unlocked pid file [/tmp/lshttpd/lsphp.sock.pid].
+2021-02-14 19:57:11.487887 [NOTICE] [Child: 4738] Setup swapping space...
+2021-02-14 19:57:11.488188 [NOTICE] [Child: 4738] LiteSpeed/1.6.17 Open
+	module versions:
+	modgzip 1.1
+	cache 1.62
+	modinspector 1.1
+	uploadprogress 1.1
+	mod_security 1.3
+ starts successfully!
+2021-02-14 19:57:11.723739 [NOTICE] [LocalWorker::workerExec] VHost:_AdminVHost suExec check uid 910 gid 65534 setuidmode 2.
+2021-02-14 19:57:11.723963 [NOTICE] [LocalWorker::workerExec] Config[AdminPHP]: suExec uid -1 gid -1 cmd /usr/local/lsws/admin/fcgi-bin/admin_php -c ../conf/php.ini, final uid 910 gid 65534.
+2021-02-14 19:57:11.724468 [NOTICE] [AdminPHP] add child process pid: 4781
+Monitoring error.log
+2021-02-14 20:02:35.174414 [INFO] [config:server:basics] httpdWorkers: 2, Num of Processors: 8
+2021-02-14 20:02:35.175249 [INFO] [config:server:basics] enableLVE: 0
+2021-02-14 20:02:35.175461 [INFO] [config:server:basics] bubbleWrap: 0, cmd: '(null)'
+2021-02-14 20:02:35.175741 [NOTICE] [testAndFixDirs] "/usr/local/lsws//cachedata/" exist and change own to 65534:65534.
+2021-02-14 20:02:35.175995 [NOTICE] [testAndFixDirs] "/usr/local/lsws//tmp/" exist and change own to 65534:65534.
+2021-02-14 20:02:35.176290 [NOTICE] [testAndFixDirs] "/usr/local/lsws//tmp/ocspcache/" exist and change own to 65534:65534.

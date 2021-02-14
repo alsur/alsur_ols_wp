@@ -1,0 +1,98 @@
+version: '3.0'
+
+networks:
+  alsur-proxy:
+    external: true
+
+########## SERVICES ########
+services:
+###### xshok-openlitespeed-php
+    openlitespeed:
+      image: extremeshok/openlitespeed-php:latest
+      depends_on:
+        - redis
+        - mysql
+      volumes:
+        # volume mounts xtremshock
+        #- vol-www-vhosts:/var/www/vhosts/:rw
+        #- vol-www-conf:/etc/openlitespeed/:rw
+        #- vol-www-logs:/usr/local/lsws/logs/:rw
+
+        #- ./web/lsws/admin/conf/:/usr/local/lsws/admin/conf/
+        #- ./web/lsws/conf/:/usr/local/lsws/conf/
+
+        - ./etc/lsws/:/etc/openlitespeed/:rw
+        - ./sites:/var/www/vhosts/:rw
+        - ./data/logs:/usr/local/lsws/logs/
+
+      environment:
+      #optional enviromental varibles
+        - TZ=${TZ}
+        - VHOST_CRON_ENABLE=true
+        - WP_AUTOUPDATE_ENABLE=true
+        - WP_AUTOUPDATE_DEBUG=false
+        - PHP_TIMEZONE=${TZ}
+        - PHP_REDIS_SESSIONS=no
+        - PHP_REDIS_HOST=redis
+        - PHP_REDIS_PORT=6379
+        - PHP_MAX_UPLOAD_SIZE=32
+        - PHP_MAX_TIME=300
+        - PHP_MEMORY_LIMIT=256
+        - PHP_DISABLE_FUNCTIONS=shell_exe
+        - PHP_SMTP_HOST=smtp.alsur.es
+        - PHP_SMTP_PORT=587
+        - PHP_SMTP_USER=mail@yoursmtp.com
+        - PHP_SMTP_PASS=securpassword
+      restart: ${DEFAULT_RESTART_POLICY:-always}
+      sysctls:
+        - net.ipv6.conf.all.disable_ipv6=${SYSCTL_IPV6_DISABLED:-0}
+      dns:
+        - ${IPV4_NETWORK:-172.22.1}.254
+      networks:
+      - default
+      # - alsur-proxy
+      ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+      - 7080:7080
+
+###### MYSQL
+    mysql:
+      image: mariadb:10.5
+      volumes:
+        #data
+        - ./data/mysql/:/var/lib/mysql/:rw
+        #conf
+        - ./etc/mysql/conf.d/my-2gb.cnf:/etc/mysql/conf.d/my.cnf:ro
+        #init.import
+        - ./data/mysql.init.import/:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+
+      environment:
+        - TZ=${TIMEZONE}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      restart: always
+
+
+###### REDIS
+    redis:
+      image: redis:latest
+      volumes:
+        - ./etc/redis/:/etc/redis/:ro
+        - ./data/redis/:/var/lib/redis:delegated
+      restart:          always
+      # DO NOT EXPOSE PORTS..SECURITY RISK
+      # ports:
+      #   - 6379:6379
+      command:
+        - redis-server
+        - /etc/redis/redis.conf
+      environment:
+        - TZ=${TIMEZONE}
+      sysctls:
+        - net.ipv6.conf.all.disable_ipv6=1
+      # networks:
+      #   - backend

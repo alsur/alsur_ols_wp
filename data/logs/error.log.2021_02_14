@@ -1,0 +1,7 @@
+Monitoring error.log
+2021-02-14 19:57:10.871905 [INFO] [config:server:basics] httpdWorkers: 2, Num of Processors: 8
+2021-02-14 19:57:10.872779 [INFO] [config:server:basics] enableLVE: 0
+2021-02-14 19:57:10.873111 [INFO] [config:server:basics] bubbleWrap: 0, cmd: '(null)'
+2021-02-14 19:57:10.873474 [NOTICE] [testAndFixDirs] "/usr/local/lsws//cachedata/" exist and change own to 65534:65534.
+2021-02-14 19:57:10.873774 [NOTICE] [testAndFixDirs] "/usr/local/lsws//tmp/" exist and change own to 65534:65534.
+2021-02-14 19:57:10.874060 [NOTICE] [testAndFixDirs] "/usr/local/lsws//tmp/ocspcache/" exist and change own to 65534:65534.
